@@ -22,7 +22,7 @@
 		<junit.jupiter.version>5.7.2</junit.jupiter.version>
 		<maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
