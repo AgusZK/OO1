@@ -48,7 +48,7 @@ public class Farola {
     /* * Si la farola no está encendida, la enciende y propaga la acción.*/
     public void turnOn(){
         // PRENDO LA FAROLA SI NO ESTA PRENDIDA
-        if (!this.isOn()){
+        if (this.isOff()){
             this.prendida = true;
             // PRENDO TODAS LAS VECINAS
             for (Farola f: listaF){
