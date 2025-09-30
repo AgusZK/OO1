@@ -15,7 +15,7 @@ class InversorTest{
     void setUp(){
         inversor = new Inversor("Agus");
         accion = new InversionAcciones("Bitcoin",10,1000);
-        plazofijo = new InversionPlazoFijo(LocalDate.of(2025, 9,20),200,10);
+        plazofijo = new InversionPlazoFijo(LocalDate.of(2025, 9,20),200,0.1);
     }
 
     @Test
@@ -23,7 +23,7 @@ class InversorTest{
         assertEquals(0, inversor.valorActual());
         inversor.agregarInversion(accion);
         inversor.agregarInversion(plazofijo);
-        assertEquals(28200, inversor.valorActual());
+        assertEquals(10400, inversor.valorActual());
     }
 
     @Test
@@ -33,7 +33,7 @@ class InversorTest{
 
     @Test
     void testInversionPlazoFijo(){
-        assertEquals(18200, plazofijo.valorActual());
+        assertEquals(400, plazofijo.valorActual());
     }
 
 }
