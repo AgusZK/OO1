@@ -31,6 +31,6 @@ class ClienteDeCorreoTest {
         Email mail2 = new Email ("mail2", "cuerpo2");
         clienteCorreo.recibir(mail1);
         clienteCorreo.mover(mail2,carpeta);
-        assertEquals(24, clienteCorreo.espacioOcupado());
+        assertEquals(12, clienteCorreo.espacioOcupado());
     }
 }

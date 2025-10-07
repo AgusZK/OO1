@@ -34,5 +34,6 @@ class DateLapseTest {
     void testContiene(){
         assertTrue(fecha1.includesDate(desde));
         assertTrue(fecha1.includesDate(hasta));
+        assertTrue(fecha2.includesDate(hasta2));
     }
 }
