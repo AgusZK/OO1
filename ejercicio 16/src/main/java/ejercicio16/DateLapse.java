@@ -28,4 +28,8 @@ public class DateLapse implements Date {
         return (other.equals(this.getFrom()) || other.equals(this.getTo()))
                 || (other.isAfter(this.getFrom()) && other.isBefore(this.getTo()));
     }
+    // Agrego metodo para ejercicio 19 y 20
+    public boolean overlapse(DateLapse periodo) {
+        return !((this.from.isAfter(periodo.to)) || (this.to.isBefore(periodo.from)));
+    }
 }
