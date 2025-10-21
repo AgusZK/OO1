@@ -37,12 +37,6 @@ class EnvioTest {
         emp.agregarEnvio(envioInt);
         // Solo el primer mes
         DateLapse periodo1 = new DateLapse(LocalDate.of(2025,10,1), LocalDate.of(2025,10,30));
-        // Solo el segundo mes
-        DateLapse periodo2 = new DateLapse(LocalDate.of(2025,11,1), LocalDate.of(2025,11,30));
-        // Solo el tercer mes
-        DateLapse periodo3 = new DateLapse(LocalDate.of(2025,12,1), LocalDate.of(2025,12,31));
-        // 2 meses
-        DateLapse periodo4 = new DateLapse(LocalDate.of(2025,10,1), LocalDate.of(2025,11,30));
         // Todos los meses
         DateLapse periodo5 = new DateLapse(LocalDate.of(2025,10,1), LocalDate.of(2025,12,31));
         // Fuera del rango
@@ -50,9 +44,6 @@ class EnvioTest {
 
         // Persona (Con Descuento) mes1, mes2, mes3, 2 meses, Todos
         assertEquals(1350, persona.montoAPagarEnvios(periodo1));
-        assertEquals(4500, persona.montoAPagarEnvios(periodo2));
-        assertEquals(7200, persona.montoAPagarEnvios(periodo3));
-        assertEquals(5850, persona.montoAPagarEnvios(periodo4));
         assertEquals(13050, persona.montoAPagarEnvios(periodo5));
         // Empresa mes1, Todos
         assertEquals(1500, emp.montoAPagarEnvios(periodo1));

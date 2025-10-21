@@ -19,8 +19,10 @@ public abstract class Cliente {
     }
 
     public double montoAPagarEnvios(DateLapse periodo){
-        return this.envios.stream().filter(f -> periodo.includesDate(f.getFechaDespacho()))
-                .mapToDouble(monto -> this.calcularMonto(monto.getMonto())).sum();
+        return this.envios.stream()
+                .filter(f -> periodo.includesDate(f.getFechaDespacho()))
+                .mapToDouble(monto -> this.calcularMonto(monto.getMonto()))
+                .sum();
     }
 
     public ArrayList<Envio> getEnvios(){
