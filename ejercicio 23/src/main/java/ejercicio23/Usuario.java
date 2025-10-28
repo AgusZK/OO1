@@ -31,7 +31,7 @@ public abstract class Usuario {
     }
 
     public void descontarSaldo(double monto){
-        this.saldo = monto - this.calcularDescuento();
+        this.saldo -= monto - this.calcularDescuento();
     }
 
     public String listarDestinos(){
