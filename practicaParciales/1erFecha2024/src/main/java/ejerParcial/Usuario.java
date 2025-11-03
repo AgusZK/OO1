@@ -1,7 +1,6 @@
 package ejerParcial;
 
 import ejercicio16.DateLapse;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
