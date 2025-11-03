@@ -44,9 +44,9 @@ class UsuarioTest {
     @Test
     void testCargarYDescontarSaldo() {
         pasajero1.cargarSaldo(5000);
-        assertEquals(20000, pasajero1.getSaldo(), 0.01);
+        assertEquals(20000, pasajero1.getSaldo());
         pasajero1.descontarSaldo(10000);
-        assertEquals(10000, pasajero1.getSaldo(), 0.01);
+        assertEquals(10000, pasajero1.getSaldo());
     }
 
     @Test
