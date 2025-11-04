@@ -35,5 +35,6 @@ package ejerParcial;
         -8) Retorna precio de inscrpcion + precio remera + suma total de los precios de las sedes + recargo del 20% del precio de inscrpcion
         -9) retorna precio de inscrpcion + precio remera + suma total de los precios de las sedes (sin recargo)
 
+    Clase sede: TODOS LOS METODOS QUE NO SEAN GETTER/SETTER TESTEARLOS
 */
 

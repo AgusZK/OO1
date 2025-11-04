@@ -3,6 +3,7 @@ package ejerParcial;
 import ejercicio16.DateLapse;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Usuario {
     private String nombre;
@@ -13,8 +14,8 @@ public class Usuario {
         this.entradas = new ArrayList<Entrada>();
     }
 
-    public double consultarPrecio(Evento e){
-        return e.precioAsistencia(LocalDate.now());
+    public double consultarPrecio(Evento e, LocalDate date) {
+        return e.precioAsistencia(date);
     }
 
     public Entrada comprarEntrada(Evento e, boolean seguro){
@@ -26,7 +27,7 @@ public class Usuario {
     public double montoEntrada(DateLapse periodo){
         return this.entradas.stream()
                 .filter(e -> periodo.includesDate(e.getFecha()))
-                .mapToDouble(e -> e.precioE())
+                .mapToDouble(Entrada::precioE)
                 .sum();
     }
 
@@ -34,8 +35,7 @@ public class Usuario {
         LocalDate hoy = LocalDate.now();
         return this.entradas.stream()
                 .filter(e -> e.getFecha().isAfter(hoy))
-                .sorted((e1, e2) -> e1.getFecha().compareTo(e2.getFecha()))
-                .findFirst()
+                .min(Comparator.comparing(Entrada::getFecha))
                 .orElse(null);
     }
 }

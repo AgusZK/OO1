@@ -13,8 +13,14 @@ public class PlanGrupal extends Plan{
         return 800 * this.getCantIp();
     }
 
+    // PASAR ANTIGUEDAD COMO PARAMETRO Y PREGUNTAR ACA LA CANTIDAD DE ANOIS DE ANTIGUEDAD (HACER ESTO ARRIBA)
     public double calcularPenalizacion(DateLapse periodo){
         long cantIPS = contarIpsEnPeriodo(periodo);
-        return cantIPS > this.getCantIp() ? (cantIPS - this.getCantIp() * 500) : 0;
+        return cantIPS > this.getCantIp() ? (cantIPS - this.getCantIp() * this.montoPenalizacion(antiguedad)) : 0;
+    }
+    // METODO CORRECOT, PASAS PERIODO AL METODO DE ARRIBA
+    @Override
+    public double montoPenalizacion(int antiguedad) {
+        return antiguedad > 10 ? 0 : 500;
     }
 }

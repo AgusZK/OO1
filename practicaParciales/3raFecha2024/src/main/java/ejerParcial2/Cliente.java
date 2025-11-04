@@ -19,12 +19,9 @@ public class Cliente {
         return this.plan.calcularPrecioBase();
     }
 
+    // desastre envidioso mal. El plan sabe calcular su monto total
     public double montoTotalACobrar(DateLapse periodo){
-        double base = this.plan.calcularPrecioBase();
-        double actividades = this.plan.calcularMontoActividades(periodo);
         int antiguedad = Period.between(this.fechaAlta, periodo.getTo()).getYears();
-        double penalizacion = 0;
-        if (antiguedad > 10){ penalizacion = this.plan.calcularPenalizacion(periodo);}
-        return base + actividades + penalizacion;
+        return plan.calcularMontoTotal(periodo, antiguedad);
     }
 }

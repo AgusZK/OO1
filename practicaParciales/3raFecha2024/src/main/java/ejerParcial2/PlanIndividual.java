@@ -5,8 +5,8 @@ import ejercicio16.DateLapse;
 public class PlanIndividual extends  Plan{
     private int minutosContratados;
 
-    public PlanIndividual(double precioBase, int cantIp, int minutosContratados){
-        super(precioBase,cantIp);
+    public PlanIndividual(double precioBase, int minutosContratados){
+        super(precioBase, 1);
         this.minutosContratados = minutosContratados;
     }
 

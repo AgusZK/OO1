@@ -15,7 +15,7 @@ public class Entrada {
 
     public LocalDate getFecha(){return this.fecha;}
 
-    public double precioE(){ return this.evento.getPrecio();}
+    public double precioE(){ return this.evento.precioAsistencia(this.fecha);}
 
     public double calcularDevolucion(){
         double devolver = 0;

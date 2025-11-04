@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class EventoVirtual extends Evento{
 
+    // Precio envio remera
+
     public EventoVirtual(String nombre, LocalDate fecha, String tema, double pi, double pr){
         super(nombre,fecha,tema,pi,pr);
     }

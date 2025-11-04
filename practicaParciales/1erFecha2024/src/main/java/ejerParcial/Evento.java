@@ -19,5 +19,9 @@ public abstract class Evento {
     public double getPrecio(){return this.precioInscripcion;}
     public double getPrecioRemera(){return this.precioRemera;}
     public LocalDate getFecha(){return this.fecha;}
-    public abstract double precioAsistencia(LocalDate fecha);
+    public double precioAsistencia(LocalDate fecha) {
+        return this.getPrecio() + this.getPrecioRemera() + /*recargo + */ this.montoAdicional();
+    }
+
+    public abstract double montoAdicional();
 }
